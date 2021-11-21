@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  forward-headers-strategy: FRAMEWORK
+  shutdown: graceful
+  error:
+    include-exception: off
+    include-stacktrace: never
+    include-message: never
+
+spring:
+  profiles:
+    active: default
+    include:
+      - common
+      - h2
+
+  application:
+    name:  kboot-spring-data-rest-demo
