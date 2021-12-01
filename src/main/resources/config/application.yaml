@@ -8,11 +8,15 @@ server:
     include-message: never
 
 spring:
-  profiles:
-    active: default
-    include:
-      - common
-      - h2
+  config:
+    activate:
+      on-profile: default
+    import: classpath:config/postgres.yaml
+
+#    include:
+#      - common
+#      - h2
+#      - postgres
 
   application:
     name:  kboot-spring-data-rest-demo
